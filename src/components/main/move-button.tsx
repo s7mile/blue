@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const Button = styled.button<{ isPrev: boolean }>`
+const Button = styled.button<{ $isPrev: boolean }>`
   position: absolute;
-  ${(props) => (props.isPrev ? "left: 0" : "right: 0")};
+  ${(props) => (props.$isPrev ? "left: 0" : "right: 0")};
   bottom: 155px;
   width: 30px;
   background: none;
@@ -25,7 +25,7 @@ export function PrevButton({ setShowCategory, showCategory }: ButtonProps) {
   };
 
   return (
-    <Button isPrev={true} onClick={buttonHandler}>
+    <Button $isPrev={true} onClick={buttonHandler}>
       <svg
         width="20"
         height="30"
@@ -55,7 +55,7 @@ export function NextButton({ setShowCategory, showCategory }: ButtonProps) {
   };
 
   return (
-    <Button isPrev={false} onClick={buttonHandler}>
+    <Button $isPrev={false} onClick={buttonHandler}>
       <svg
         width="20"
         height="30"

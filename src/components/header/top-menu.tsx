@@ -27,16 +27,17 @@ const Item = styled.li`
   }
 `;
 
-const Link = styled.a<{ fColor: string; fHover: string }>`
+const Link = styled.a<{ $color: string; $hover: string }>`
   display: block;
   position: relative;
   padding: 0 15px;
   font-size: 19px;
   font-weight: 400;
-  color: ${(props) => props.fColor};
+  color: ${(props) => props.$color};
   background-color: ${color.white};
 
-  ${(props) => (props.fHover ? "&:hover {color: " + props.fHover + "}" : "")};
+  ${(props) =>
+    props.$hover.length > 0 ? "&:hover {color: " + props.$hover + "}" : ""};
 `;
 
 function TopMenu() {
@@ -65,7 +66,7 @@ type TopMenuItemProps = {
 function TopMenuItem({ title, link, color, hover }: TopMenuItemProps) {
   return (
     <Item>
-      <Link href={link} fColor={color} fHover={hover}>
+      <Link href={link} $color={color} $hover={hover}>
         {title}
       </Link>
     </Item>

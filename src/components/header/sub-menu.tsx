@@ -33,15 +33,15 @@ const Item = styled.li`
   }
 `;
 
-const Link = styled.a<{ fColor: string; fHover: string }>`
+const Link = styled.a<{ $color: string; $hover: string }>`
   display: block;
   position: relative;
   font-size: 15px;
-  color: ${(props) => props.fColor};
+  color: ${(props) => props.$color};
   background-color: ${color.white};
 
   ${(props) =>
-    props.fHover.length > 0 ? "&:hover {color: " + props.fHover + "}" : ""};
+    props.$hover.length > 0 ? "&:hover {color: " + props.$hover + "}" : ""};
 `;
 
 function SubMenu() {
@@ -70,7 +70,7 @@ type SubMenuItemProps = {
 function SubMenuItem({ title, link, color, hover }: SubMenuItemProps) {
   return (
     <Item>
-      <Link href={link} fColor={color} fHover={hover}>
+      <Link href={link} $color={color} $hover={hover}>
         {title}
       </Link>
     </Item>

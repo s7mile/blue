@@ -120,8 +120,8 @@ function HamburgerMenuItem({ item }: HamburgerMenuItemProps) {
         {item?.title}
       </Link>
       <ul>
-        {item.subCategory.map((subItem) => (
-          <SubItem>
+        {item.subCategory.map((subItem, index) => (
+          <SubItem key={`hamburger-menu-sub-item-${index}`}>
             <SubLink href={subItem?.link}>{subItem?.title}</SubLink>
           </SubItem>
         ))}
